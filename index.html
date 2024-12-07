@@ -1,0 +1,64 @@
+<!-- Designed by Webdshy, Website: https://webdshy.alwaysdata.net -->
+<!-- Stack(languages) used: html,Css,Vue.js  -->
+<!-- Not responsive -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Card - WebDshy</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <!-- Script -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="card">
+            <div class="head">
+                <div class="card_name">Bank Card</div>
+                <div class="icone"><i class="fas fa-leaf"></i></div>
+            </div>
+            <div class="body">
+                <div class="chip_card"><img src="./chip.png" alt="chip_card"></div>
+                <div class="card_number">
+                    <span>{{ numberInput }}</span>
+                </div>
+            </div>
+            <div class="foot">
+                <div class="user_name"><span>{{ nameInput }}</span></div>
+                <div class="cvc_exp">
+                    <div class="cvc"><b>CVC:</b> <span>{{ cvcInput }}</span></div>
+                    <div class="exp"><b>EXP:</b> <span>10/26</span></div>
+                </div>
+            </div>
+        </div>
+        <form action="" method="">
+            <div class="input">
+                <label for="name">Your name</label>
+                <input type="text" name="" id="name" v-model="nameInput" @input="formatNameInput">
+                <span>{{ name_error }}</span>
+            </div>
+            <div class="input">
+                <label for="number">Number Card</label>
+                <input type="text" name="" id="number" placeholder="xxxx xxxx xxxx xxxx" v-model="numberInput" @input="formatNumberInput" maxlength="19">
+                <span>{{ number_error }}</span>
+            </div>
+            <div class="input">
+                <label for="cvc">Cvc</label>
+                <input type="text" name="" id="cvc" v-model="cvcInput" @input="formatCvcInput" maxlength="3">
+                <span>{{ cvc_error }}</span>
+            </div>
+            <div class="input">
+                <label for="exp">Exp</label>
+                <input type="text" name="" id="exp" v-model="expInput" @input="formatExpInput" maxlength="5">
+                <span>{{ exp_error }}</span>
+            </div>
+        </form>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
